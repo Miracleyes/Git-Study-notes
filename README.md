@@ -296,9 +296,9 @@ git remote rm <origin>
 
 ## 参考文献：
 
-[官方教程]: https://git-scm.com/book/zh/v2
-[配置host文档解决超时问题]: https://blog.csdn.net/Gherbirthday0916/article/details/125504214
-[配置代理]: https://blog.csdn.net/Strive_For_Future/article/details/120962003?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-120962003-blog-121664227.t0_edu_mix&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-120962003-blog-121664227.t0_edu_mix&amp;utm_relevant_index=2
+[官方教程]: https://git-scm.com/book/zh/v2	"官方教程"
+[配置host文档解决超时问题]: https://blog.csdn.net/Gherbirthday0916/article/details/125504214	"配置host文档解决超时问题"
+[配置代理]: https://blog.csdn.net/Strive_For_Future/article/details/120962003?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-120962003-blog-121664227.t0_edu_mix&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-120962003-blog-121664227.t0_edu_mix&amp;utm_relevant_index=2	"配置代理"
 
 
 -----
