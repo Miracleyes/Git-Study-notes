@@ -4,6 +4,7 @@
 ## 1.设置自己的全局账户信息
 `git config --global`是全局的用户信息，文件位于`user/~/.gitconfig`
 其中邮箱和姓名是必备的，用于区分不同的用户，设置方法如下
+
 ```cmd
 $ git config --global user.email *****@qq.com
 $ git config --global user.name *****
@@ -11,8 +12,9 @@ $ git config --global user.name *****
 查看自己的全局信息`git config --global --list`
 查看某条全局信息`git config --global user.name`
 
+
 -----
-## 2.创建存储库（repository）
+## 2.创建存储库
 **存储库** 是一个文件夹，文件夹和子文件夹里的所有代码文件都会被`.git`托管和跟踪
 选定一个目录右键运行`git bash`输入
 
@@ -207,10 +209,45 @@ git tag # 查看标签
 常用的远程仓库包括`github`或是国内的`gitee`，如果只是使用别人的仓库那不需要注册账号
 直接使用`git clone`从现有的远程存储库中拷贝项目
 在当前目录下克隆远程仓库
+
 ```cmd
 git clone <url> <name>
 ```
 `url`为仓库地址，`name`为用户自定义的本地仓库名称
+
+当想要获取更新时，可以输入以下命令
+
+```cmd
+git pull
+```
+当管理自己的项目时，使用以下命令推送新的版本到服务器
+```cmd
+git push
+```
+
+>### 小提示：
+>由于`github`的服务器在国外，因此在访问时可能会出现超时访问失败的现象，如果你没有科学上网工具，并且无法`ping`通`github.com`，可以尝试以下方法：
+>`windows`用户打开`C:\Windows\System32\drivers\etc\hosts.ics`文件，在其末尾加入以下三行并保存，其中第一行的地址可以通过 [Github Addr](https://ipaddress.com/website/www.github.com) 获取
+>
+>```cmd
+>140.82.112.4 github.com
+>199.232.5.194 github.global.ssl.fastly.net
+>54.231.114.219 github-cloud.s3.amazonaws.com
+>```
+>通过这个方法可以解决无法`ping`通`github.com`的问题
+>如果你已经有科学上网工具的话，也可能会出现完全无法访问的问题（比不开代理更严重），此时>的解决方法是：
+>在命令行配置`git`
+>```cmd
+>git config --global http.proxy http://127.0.0.1:11223
+>git config --global https.proxy http://127.0.0.1:11223
+>```
+>这里`http://127.0.0.1:11223`是我的网络代理端口，根据需要换成你的即可
+>当不使用代理时，取消配置
+>```cmd
+>git config --global --unset
+>git config --global --unset
+>```
+
 
 下面主要以`github`为例介绍如何创建自己的远程仓库，`github`上无论是公有库还是私有库都是完全免费的，可以选择是否开源，首先需要准备的是与远程服务器之间的连接，这里使用的是`SSH`加密连接，这需要一个`SSH KEY`，在命令行输入以下代码
 ```cmd
@@ -226,6 +263,7 @@ $ ssh -T git@github.com
 
 之后需要在`github`新建一个自己的 **远程库** ，建立完成后会有简单教程说明如何上传自己的库，这里要详细讲解的是`origin`这个变量的作用，它是指向你远程库网址的指针，如果你只使用`github`上的这一个网址，那就没有重命名的必要，如果本地库对应了多个远程库地址，需要重命名区分这些地址了
 当准备上传时，需要首先声明远程库如下
+
 ```cmd
 git remote add <origin> <url>
 git remote # 查看远程库
@@ -256,10 +294,12 @@ git merge <origin>/<b1> <b2> <b3>
 git remote rm <origin>
 ```
 
+## 参考文献：
 
-
-[官方教程链接](https://git-scm.com/book/zh/v2)
+[官方教程]: https://git-scm.com/book/zh/v2
+[配置host文档解决超时问题]: https://blog.csdn.net/Gherbirthday0916/article/details/125504214
+[配置代理]: https://blog.csdn.net/Strive_For_Future/article/details/120962003?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-120962003-blog-121664227.t0_edu_mix&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-120962003-blog-121664227.t0_edu_mix&amp;utm_relevant_index=2
 
 
 -----
-## @2021-09 @yubao 
+## @2022-09 @yubao 
